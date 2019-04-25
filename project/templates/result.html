@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Results
+{% endblock %}
+
+{% block main %}
+
+<h3>Congratulations!</h3>
+
+<p>You've finished {{ difficulty }} test. <br/>
+You've earnt {{ score }} points out of {{ total }} questions.</p>
+{% if score == total %}
+    <p>You've got the best score. But still it's better not to stop learning, because First Aid is lifesaving. You never know when You gonna need it</p>
+    <a style="border-radius: 10px" href="/enroll">Wanna some refreshment?</a>
+{% elif score * 2 > total %}
+    <p>However You've got quite a good score it's better not to stop learning, because First Aid is lifesaving. You never know when You gonna need it.</p>
+    <a style="border-radius: 10px" href="/enroll">You can refresh Your knowledge here</a>
+{% else %}
+    <p>You may see Your knowledge on what to do in critical situations is far from perfection. May be it's time to attend courses.</p>
+    <a style="border-radius: 10px" href="/enroll">You can register for the course here</a>
+{% endif %}
+
+{% endblock %}

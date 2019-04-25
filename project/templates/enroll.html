@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+
+    <form action="/enroll" method="post">
+        <input autocomplete="off" autofocus class="form-input" name="contact_data" placeholder="Phone number" type="tel">
+        <select class="form-input" name="course_type">
+            <option value="work-shop" selected>Work-shop on First Aid</option>
+            <option value="6 hours">6 hours training on First Aid</option>
+            <option value="12 hours">12 hours training on First Aid</option>
+        </select>
+        <button class="form-input" type="submit">Rock'Enroll</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+        if (!document.querySelector('input[name = "contact_data"]').value) {
+            alert('You must provide your contact information!');
+            return false;
+        }
+
+        return true;
+        };
+
+    </script>
+
+{% endblock %}

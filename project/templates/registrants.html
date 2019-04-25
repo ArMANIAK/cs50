@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registrants
+{% endblock %}
+
+{% block main %}
+
+    <p>
+        <h2>Registrants:</h2>
+    </p>
+
+    <table style="text-align: center" width="80%">
+
+        <thead style = "background-color: #ff0000; color: white">
+
+            <th>Time</th>
+            <th>Username</th>
+            <th>Contact data</th>
+            <th>Course type</th>
+            <th>Status</th>
+
+        </thead>
+        <tbody style = "background-color: white">
+
+        {% for row in rows %}
+
+        <tr>
+
+            <td> {{ row['time_stamp'] }} </td>
+            <td> {{ row['username'] }} </td>
+            <td> {{ row['contact_data'] }} </td>
+            <td> {{ row['course_type'] }} </td>
+            <td> <input type="checkbox" name="completed" disabled
+
+            {% if row['completed']  %}
+            checked>
+            {% endif %}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+{% endblock %}

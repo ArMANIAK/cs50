@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+
+    <section title="Apology" style="text-align: center">
+        <h3>
+             Error {{ code }}
+        </h3>
+        <img src="static/crying.jpg" alt="Crying person on a floor" width="400px">
+        <h3> {{ message }} </h3>
+    </section>
+
+{% endblock %}

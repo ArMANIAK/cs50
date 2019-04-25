@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Results
+{% endblock %}
+
+{% block main %}
+<section style="text-align: center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">YOUR BEST SCORES </th>
+            </tr>
+            <tr>
+                <th> EASY </th>
+                <th> MEDIUM </th>
+                <th> HARD </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{ row['easy'] }} </td>
+                <td> {{ row['medi'] }} </td>
+                <td> {{ row['hard'] }} </td>
+            </tr>
+        </tbody>
+
+    </table>
+</section>
+
+{% endblock %}

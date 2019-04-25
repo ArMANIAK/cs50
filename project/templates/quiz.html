@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    <form action="/quiz" method="post">
+        <audio autoplay>
+            <source src="static/destiny.mp3" type="audio/mpeg">
+        </audio>
+        <select class="form-input" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medi">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button class="form-input" type="submit">Choose Your Destiny</button>
+    </form>
+{% endblock %}
