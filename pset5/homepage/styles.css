@@ -1,0 +1,62 @@
+.background
+{
+    background-color: #202020;
+    height: 32px;
+}
+
+body
+{
+    background: linear-gradient(to right, #600000, #800000);
+    color: white;
+}
+
+#menu
+{
+    width: 10%;
+    height: 36px;
+    color: white;
+    text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #101010;
+  box-shadow: 0 5 15px #f0f0f0;
+}
+
+li
+{
+    float: left;
+}
+
+li a
+{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover
+{
+    background-color: #400000;
+    color: yellow;
+}
+
+.active
+{
+    background-color: #600000;
+    box-shadow: 0 0 10px #000;
+}
+
+table
+{
+    border: 1px white solid;
+    margin: 5px;
+    text-align: center;
+}
+
