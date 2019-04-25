@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form role = "form" action="/form" method="post">
+
+        <!-- TODO -->
+        <div class = "form-group">
+            In order to register for Red Cross First Aid training, please, fullfill the form. All the fields are required.
+        </div>
+        <div class = "form-group">
+            <label for = "name">
+                Name
+            </label>
+            <input type = "text" class = "form-control" name = "name" placeholder = "Enter Your Name">
+        </div>
+        <div class = "form-group">
+            <label for = "age-group">
+                Age group
+            </label>
+            <select class = "form-control" name = "age-group">
+                <option disabled selected value = "">Age Group</option>
+                <option value = "12+">12-18</option>
+                <option value = "19+">19-35</option>
+                <option value = "36+">36-65</option>
+                <option value = "66+">66+</option>
+            </select>
+        </div>
+        <div class = "form-group">
+            <label for = "phone">
+                Phone Number
+            </label>
+            <input type = "number" class = "form-control" name = "phone" placeholder = "Enter Your Phone Number">
+        </div>
+        <div class = "radio">
+            <label for = "course">
+                Choose, which course You are intrested to attend
+            </label>
+            <br>
+            <input type = "radio" name = "course" value = "MC" checked> Master class
+            <input type = "radio" name = "course" value = "6hours"> 6 hours training
+            <input type = "radio" name = "course" value = "12hors"> 12 hours training
+            <br>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+        if (!document.querySelector('input').value) {
+            alert('You must provide your name!');
+            return false;
+        }
+        else if (!document.querySelector('select').value) {
+            alert('You must provide your dorm!');
+            return false;
+        }
+        else if (!document.querySelector('input[name = "phone"]').value) {
+            alert('You must provide your dorm!');
+            return false;
+        }
+        return true;
+        };
+
+    </script>
+
+{% endblock %}

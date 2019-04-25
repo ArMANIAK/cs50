@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registering
+{% endblock %}
+
+{% block main %}
+
+    <form action="/register" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Repeat Your Password" type="password">
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit">Register for free without SMS</button>
+
+    </form>
+
+    <script>
+
+        let input = document.querySelector('input[name = "username"]');
+            input.onkeyup = function(event) {
+                event.preventDefault();
+                $.get('/check?username=' + input.value, function(data) {
+                    if (!data) {
+                        document.querySelector('form').onsubmit = function() {
+                            alert('Username is already occupied!');
+                            return false;
+                        };
+                    }
+                    return true;
+                });
+            };
+
+    </script>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+        if (!document.querySelector('input[name = "username"]').value) {
+            alert('You must provide your name!');
+            return false;
+        }
+        else if (!document.querySelector('input[name = "password"]').value) {
+            alert('You must provide your password!');
+            return false;
+        }
+        else if(!(document.querySelector('input[name = "password"]').value == document.querySelector('input[name = "confirmation"]').value)) {
+            alert('You must repeat your password!');
+            return false;
+        }
+
+        return true;
+        };
+
+    </script>
+
+{% endblock %}

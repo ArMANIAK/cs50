@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <p>
+        <h1>Purchase history:</h1>
+    </p>
+
+    <table class = "table table-bordered" width = "80%">
+
+        <thead style = "background-color: #0000dd; color: white">
+
+            <th>Time</th>
+            <th>Stock</th>
+            <th>Quantity of shares</th>
+            <th>Price</th>
+            <th>Status</th>
+
+        </thead>
+        <tbody style = "background-color: #EEEEEE">
+
+        {% for row in rows %}
+
+        <tr>
+
+            <td> {{ row['time'] }} </td>
+            <td> {{ row['stock_id'] }} </td>
+            <td> {{ row['quantity'] }} </td>
+            <td> {{ row['actual_price'] }} </td>
+            <td> {{ row['sold'] }} </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+{% endblock %}
